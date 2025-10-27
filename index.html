@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Web Dev RPG - Level Up Your Knowledge!</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Game Container -->
+    <div class="game-container">
+        
+        <!-- Header / HUD -->
+        <header class="game-header">
+            <div class="header-content">
+                <h1 class="game-title">⚔️ THE WEB DEV RPG ⚔️</h1>
+                <div class="player-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Level:</span>
+                        <span id="playerLevel" class="stat-value">1</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">XP:</span>
+                        <span id="playerXP" class="stat-value">0</span>
+                        <span class="stat-value">/ <span id="xpNeeded">100</span></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Quests:</span>
+                        <span id="questsCompleted" class="stat-value">0</span>
+                        <span class="stat-value">/ 40</span>
+                    </div>
+                </div>
+                <div class="xp-bar-container">
+                    <div id="xpBar" class="xp-bar"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="game-main">
+            
+            <!-- Sidebar Navigation -->
+            <aside class="quest-sidebar">
+                <h2 class="sidebar-title">📜 QUEST LOG</h2>
+                <div id="questList" class="quest-list"></div>
+                <button id="resetProgress" class="reset-btn">🔄 Reset Progress</button>
+            </aside>
+
+            <!-- Content Area -->
+            <section class="content-area">
+                <!-- Quest Detail View -->
+                <div id="questDetail" class="quest-detail hidden">
+                    <div class="quest-header">
+                        <h2 id="questTitle" class="quest-title"></h2>
+                        <span id="questStatus" class="quest-status-badge"></span>
+                    </div>
+                    <div id="questContent" class="quest-content"></div>
+                    <div class="quest-actions">
+                        <button id="completeQuest" class="btn-complete">✅ Complete Quest (+50 XP)</button>
+                        <button id="prevQuest" class="btn-nav">← Previous</button>
+                        <button id="nextQuest" class="btn-nav">Next →</button>
+                    </div>
+                </div>
+
+                <!-- Level Up Modal -->
+                <div id="levelUpModal" class="modal hidden">
+                    <div class="modal-content level-up-content">
+                        <h2>🎉 LEVEL UP! 🎉</h2>
+                        <p class="level-up-text">You've reached Level <span id="newLevel"></span>!</p>
+                        <p class="level-up-message"></p>
+                        <button id="closeLevelUp" class="btn-complete">Continue Adventure!</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="game-footer">
+            <p>💻 A Gamified Journey Through Web Computing | Created with ❤️ | Your Progress is Auto-Saved</p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="lang/messages/en.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
